@@ -4,7 +4,7 @@ nginx_service_name: "nginx"
 nginx_user: "nginx"
 nginx_group: "nginx"
 nginx_html_dir: "/var/www/html"
-nginx_cf: "/etc/nginx/sites-enabled"
+nginx_cf: "/etc/nginx/sites-available"
 nginx_pid_file: "/var/run/nginx.pid"
 nginx_worker_connections: 1024
 nginx_worker_rlimit_nofile: 1024

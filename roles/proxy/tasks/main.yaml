@@ -10,15 +10,16 @@
 - debug:
     var: nginx_status.stdout_lines
 
+- name: Ansible delete file default
+  file:
+    path: /etc/nginx/sites-available/default
+    state: absent
+
 - name: NGINX --> Copy extra/sites configuration files
   become: yes
   template:
-    src: nginxcf.j2
-    dest: "{{ nginx_cf }}/nginxcf"
-- name: Ansible delete file default
-  file:
-    path: /etc/nginx/sites-enabled/default
-    state: absent
+    src: default.j2
+    dest: "{{ nginx_cf }}/default"
 #- name: NGINX --> Config file html
 #  template:
 #    src: index.html.j2
